@@ -1,0 +1,25 @@
+﻿<ion-view view-title="家务便" >
+  <ion-content >
+
+      
+      <!-- dirhective to print-->
+      <div ng-controller="DashCtrl" style="margin-bottom:10px;" class="button-bar">
+          <a ng-click="changeState('join')" class="button">加入家务便</a>
+          <a ng-click="changeState('post')" class="button">张贴工作</a>
+      </div>
+
+
+
+      <ion-list ng-controller="employeeCtrl " >
+          <ion-item href="#/hd/employee/{{x.id}}"  class="item-remove-animate item-avatar item-icon-right" ng-repeat="x in employee" type="item-text-wrap" >
+            
+                  <img  src="http://s-208733.gotocdn.com/profile_images/{{x.image}}.jpg" />
+                  <h2>名：{{x.display_name}}</h2>
+                  <p> 年龄:{{x.age}}</p>
+                  <p> id:{{x.id}}</p>
+              
+
+          </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

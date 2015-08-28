@@ -1,0 +1,32 @@
+﻿<!--
+Create tabs with an icon and label, using the tabs-stable style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+<ion-tabs class="tabs-icon-top tabs-stable">
+
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="找钟点" icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" href="#/hd/dash">
+    <ion-nav-view name="hd-dash"></ion-nav-view>
+  </ion-tab>
+
+
+    <!-- Employees Tab -->
+    <ion-tab title="找工作" icon-off="ion-ios-compose-outline" icon-on="ion-ios-compose" href="#/hd/joblist">
+        <ion-nav-view name="hd-joblist"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Chats Tab -->
+    <ion-tab title="接洽" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/hd/chats">
+        <ion-nav-view name="hd-chats"></ion-nav-view>
+    </ion-tab>
+
+  <!-- Account Tab -->
+  <ion-tab title="我的" icon-off="ion-ios-bookmarks-outline" icon-on="ion-ios-bookmarks" href="#/hd/account">
+    <ion-nav-view name="hd-account"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

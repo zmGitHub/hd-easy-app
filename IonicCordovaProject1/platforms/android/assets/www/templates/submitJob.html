@@ -1,0 +1,58 @@
+﻿<ion-view view-title="submitJob" >
+
+
+
+  <ion-content>
+      <form ng-submit="processForm()">
+
+          <div class="list">
+              <!-- TOPIC -->
+              <label class="item item-input">
+                  <input ng-model="formData.topic" type="text" name="topic" placeholder="topic" />
+              </label>
+              <!-- SERVICE TYPE -->
+              <ul class="list">
+                  <li class="item item-checkbox">
+                      <label class="checkbox">
+                          <input ng-model="formData.service_type" name="service_type" type="checkbox" >
+                      </label>
+                      Service 1
+                  </li>
+                  <li class="item item-checkbox">
+                      <label class="checkbox">
+                          <input ng-model="formData.service_type2"  name="service_type2" type="checkbox">
+                      </label>
+                      Service 2
+                  </li>
+              </ul>
+
+              <!-- INTRO -->
+              <label class="item item-input">
+                  <input ng-model="formData.intro" type="text" name="intro" placeholder="intro" />
+              </label>
+              <!-- PERIOD -->
+              <label class="item item-input">
+                  <input ng-model="formData.period" type="text" name="period" placeholder="period" />
+              </label>
+              <!-- LOCATION -->
+              <label class="item item-input">
+                  <input ng-model="formData.location" type="text" name="location" placeholder="location" />
+              </label>
+          </div>
+
+          <!-- SUBMIT BUTTON -->
+          <button type="submit" class="btn btn-success btn-lg btn-block">
+              <span class="glyphicon glyphicon-flash"></span> Submit!
+          </button>
+
+          <input type="hidden" ng-model="formData.user_id" name="user_id" value="1"/>
+
+      </form>
+
+      <!-- SHOW DATA FROM INPUTS AS THEY ARE BEING TYPED -->
+      <pre>
+        {{ formData }}
+    </pre>
+
+  </ion-content>
+</ion-view>

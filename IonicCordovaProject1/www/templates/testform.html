@@ -1,0 +1,26 @@
+﻿<ion-view view-title="submitProfile">
+
+
+
+    <ion-content>
+
+        <div>
+
+            <pre>
+        {{ params.outputModel }}
+    </pre>
+
+        </div>
+
+        <mk-city-picker open="params.open" placeholder="请选择城市" format='$0省-$1市-$2县' ng-model="params.outputModel" q="params.inputModel">
+        </mk-city-picker>
+     
+
+        <!-- show our formData as it is being typed -->
+
+        <div>选择中的城市: {{ params.outputModel.province[2] }} {{ params.outputModel.city[1] }} {{ params.outputModel.district[1] }}</div>
+
+
+
+    </ion-content>
+</ion-view>

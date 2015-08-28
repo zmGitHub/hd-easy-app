@@ -1,0 +1,114 @@
+﻿<ion-view view-title="Employee"  ng-controller="getAllJobController">
+    <div class="bar bar-subheader bar-stable">
+        <div class="button-bar">
+            <a select-address p="p" c="c" a="a" d="d" ng-model="selectid" class="button button-clear icon-right" />地区
+                <i class="ion-arrow-down-b zuionDownCss"></i>
+            <a/>
+            <a class="button button-clear icon-right" ng-click="openYaoqiuTimePopover($event);">要求时间
+                <i class="ion-arrow-down-b zuionDownCss"></i>
+            </a>
+            <a class="button button-clear icon-right" ng-click="openYaoqiuShiduanPopover($event);">要求时段
+                <i class="ion-arrow-down-b zuionDownCss"></i>
+            </a>
+        </div>
+    </div>
+  <ion-content class="findJobContent">
+      <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+显示选中的地区{{selectid}}
+      <ion-list>
+          <!--<ion-item ng-if="laiyuanTap" ng-repeat="menu in itemslaiyuan|filter:{groupId:laiyuan}">-->
+              <!--<i class="icon ion-grid"></i> {{menu.title}}-->
+          <!--</ion-item>-->
+        <!--{{shiduan}}-->
+          <ion-item href="#/hd/job/{{x.id}}" class="item-remove-animate item-avatar item-icon-right"
+                    ng-repeat="x in jobs" type="item-text-wrap" >
+              <!--过滤器-->
+              <!--|filter:{period:shiduan}|filter:{week:shijian}-->
+              <!--|filter:{week:shijian}-->
+              <img src="http://s-208733.gotocdn.com/post_images/{{x.image}}.jpg" />
+              <h2>{{x.topic}}</h2>
+              <p>{{x.province}}</p>
+              <p>{{x.week}}</p>
+              <p>{{x.period}}</p>
+              <p>{{x.create_time}}</p>
+              <p>{{x.service_type}}</p>
+          </ion-item>
+      </ion-list>
+      <!--<ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>-->
+
+  </ion-content>
+</ion-view>
+<script id="yaoqiuPopover.html" type="text/ng-template">
+        <ion-popover-view class="light-bg dark padding">
+
+            <div class="layyuanTextdiv" ng-click="selectShijian(1)">星期一
+                <input type="checkbox" name="bike" />
+                <!--<label class="checkbox">-->
+                    <!--<input type="checkbox">-->
+                <!--</label>-->
+            </div>
+            <div class="layyuanTextdiv" ng-click="selectShijian(2)">星期二
+                <input type="checkbox" name="bike" />
+            </div>
+            <div class="layyuanTextdiv" ng-click="selectShijian(3)">星期三
+                <input type="checkbox" name="bike" />
+            </div>
+            <div class="layyuanTextdiv" ng-click="selectShijian(4)">星期四
+                <input type="checkbox" name="bike" />
+            </div>
+            <div class="layyuanTextdiv" ng-click="selectShijian(5)">星期五
+                <input type="checkbox" name="bike" />
+            </div>
+            <div class="layyuanTextdiv" ng-click="selectShijian(6)">星期六
+                <input type="checkbox" name="bike" />
+            </div>
+            <div class="layyuanTextdiv" ng-click="selectShijian(7)">星期日
+                <input type="checkbox" name="bike" />
+            </div>
+        </ion-popover-view>
+</script>
+
+
+<script id="yaoqiuShiduanPopover.html" type="text/ng-template">
+    <ion-popover-view class="light-bg dark padding">
+        <div class="layyuanTextdiv" ng-click="selectShiduan('11:00-13:00')">11:00-13:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan('09:00-10:00')">09:00-10:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(1)">10:00-11:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(2)">11:00-12:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(3)">12:00-13:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(4)">13:00-14:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(5)">14:00-15:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(6)">15:00-16:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(6)">16:00-17:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(6)">17:00-18:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(6)">18:00-19:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(6)">19:00-20:00
+            <input type="checkbox" name="bike" />
+        </div>
+        <div class="layyuanTextdiv" ng-click="selectShiduan(6)">20:00-21:00
+            <input type="checkbox" name="bike" />
+        </div>
+    </ion-popover-view>
+</script>
